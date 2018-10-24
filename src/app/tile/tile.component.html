@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngFor="let itinerary of itineraries[0].data[0].attributes.itineraries" class="list-group list-group-flush">
+        <div *ngFor="let voyage of itinerary.voyages; index as i;">
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-md-6"> 
+                <i class="material-icons">directions_boat</i> {{voyage.ship.displayName | uppercase }} 
+                <i class="material-icons">calendar_today</i> {{voyage.dateDepart | date}}
+                <img *ngIf="i==0" class="card-img-top" src="./assets/{{voyage.ship.displayName | lowercase }}.jpg" alt="Card image cap">
+              </div>
+              <div class="col-md-6">
+                <h5 class="-title"></h5>
+                <p class="-text">{{voyage.itinerary.description}}</p>
+                <p class="-text">{{voyage.disembarkPort.portName}}</p>
+                <div>
+                  <a href="#" class="btn btn-primary">{{voyage.lowestVoyagePrice | currency}}</a>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$padding: 15px;
+$margin: 15px;
+body {
+     font-family: 'Roboto', sans-serif;
+     background-color:#FFFFFF;
+     color:#20285b;
+     position: relative;
+     nav {color:#FFFFFF;background: linear-gradient(to right, #1a2958, #20285b);}
+
+
+     footer  {
+        background: linear-gradient(to right, #0f3096, #20285b);
+        color: color('light-text');
+        padding-top: $padding;
+
+      
+      }
+
+
+}
+

@@ -1,0 +1,23 @@
+<nav class="navbar">
+  <a class="navbar-brand"><img class="logo img-fluid" src="./assets/hal-thumbnail.png" /></a>
+  <form @loadIn class="form-inline" *ngIf="!isValidUser && isValidUser!==false">
+    <div class="form-group mb-2 mt-2">
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Username" name="username" [(ngModel)]="username"
+        required>
+    </div>
+    <div class="form-group mx-sm-3 mb-2 mt-2">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="password"
+        required>
+    </div>
+    <button type="submit" class="btn btn-primary mx-2" (click)="checkUser()">Login</button>
+  </form>
+
+  <div @loadIn class="form-group mb-2 mt-2" *ngIf="isValidUser">
+    Welcome {{username}} <button class="btn btn-primary" (click)="logOut()">Logout</button>
+  </div>
+  <div @loadIn class="form-group mb-2 mt-2" *ngIf="isValidUser===false">
+    Invalid Username or Password <button class="btn btn-primary" (click)="logOut()">Try Again</button>
+  </div>
+</nav>
